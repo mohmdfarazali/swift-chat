@@ -6,6 +6,7 @@ import LeftNav from "@/components/LeftNav";
 import Chats from "@/components/Chats";
 import Chat from "@/components/Chat";
 import { useChatContext } from "@/context/chatContext";
+import Head from "next/head"; // Import the Head component
 
 const Home = () => {
   const { signOut, currentUser, isLoading } = useAuth();
@@ -22,6 +23,10 @@ const Home = () => {
     <Loader />
   ) : (
     <div className="bg-c1 flex h-[100vh]">
+      <Head>
+        <title>SwiftChat ✨</title>
+      </Head>
+
       <div className="flex w-full shrink-0">
         <LeftNav />
 
